@@ -1,0 +1,12 @@
+
+                        //Important commands
+
+
+// this is for protocol buffer files in protc folder
+//............................................................
+protoc --cpp_out=generated \
+       --grpc_out=generated \
+       --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` \
+       user.proto
+//............................................................
+

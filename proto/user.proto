@@ -2,24 +2,17 @@ syntax = "proto3";
 
 package user;
 
-import "google/protobuf/empty.proto";
-
-service UserService {
-  rpc CreateUser(CreateUserRequest) returns (UserResponse);
-  rpc GetUser(GetUserRequest) returns (UserResponse);
-  rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
-  rpc ListUsers(google.protobuf.Empty) returns (UserList);
-  rpc UpdateUser(UpdateUserRequest) returns (UserResponse);
-}
-
+// Core user message
 message User {
-  int32 id = 1;
-  string name = 2;
+  int32  id    = 1;
+  string name  = 2;
   string email = 3;
 }
 
+// --- Request messages ---
+
 message CreateUserRequest {
-  string name = 1;
+  string name  = 1;
   string email = 2;
 }
 
@@ -27,24 +20,37 @@ message GetUserRequest {
   int32 id = 1;
 }
 
+message UpdateUserRequest {
+  string name  = 2;
+  string email = 3;
+}
+
 message DeleteUserRequest {
   int32 id = 1;
 }
 
+message ListUsersRequest {}   // empty — no filter params yet
+
+// --- Response messages ---
+
 message UserResponse {
   User user = 1;
+}
+
+message ListUsersResponse {
+  repeated User users = 1;
 }
 
 message DeleteUserResponse {
   bool success = 1;
 }
 
-message UserList {
-  repeated User users = 1;
-}
+// --- Service ---
 
-message UpdateUserRequest {
-  int32 id = 1;
-  string name = 2;
-  string email = 3;
+service UserService {
+  rpc CreateUser (CreateUserRequest) returns (UserResponse);
+  rpc GetUser    (GetUserRequest)    returns (UserResponse);
+  rpc UpdateUser (UpdateUserRequest) returns (UserResponse);
+  rpc DeleteUser (DeleteUserRequest) returns (DeleteUserResponse);
+  rpc ListUsers  (ListUsersRequest)  returns (ListUsersResponse);
 }

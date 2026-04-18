@@ -63,6 +63,20 @@ struct GetUserRequestDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetUserRequestDefaultTypeInternal _GetUserRequest_default_instance_;
+PROTOBUF_CONSTEXPR UpdateUserRequest::UpdateUserRequest(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.email_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct UpdateUserRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR UpdateUserRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~UpdateUserRequestDefaultTypeInternal() {}
+  union {
+    UpdateUserRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdateUserRequestDefaultTypeInternal _UpdateUserRequest_default_instance_;
 PROTOBUF_CONSTEXPR DeleteUserRequest::DeleteUserRequest(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.id_)*/0
@@ -76,6 +90,17 @@ struct DeleteUserRequestDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeleteUserRequestDefaultTypeInternal _DeleteUserRequest_default_instance_;
+PROTOBUF_CONSTEXPR ListUsersRequest::ListUsersRequest(
+    ::_pbi::ConstantInitialized) {}
+struct ListUsersRequestDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ListUsersRequestDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ListUsersRequestDefaultTypeInternal() {}
+  union {
+    ListUsersRequest _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListUsersRequestDefaultTypeInternal _ListUsersRequest_default_instance_;
 PROTOBUF_CONSTEXPR UserResponse::UserResponse(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.user_)*/nullptr
@@ -89,6 +114,19 @@ struct UserResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UserResponseDefaultTypeInternal _UserResponse_default_instance_;
+PROTOBUF_CONSTEXPR ListUsersResponse::ListUsersResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.users_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct ListUsersResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR ListUsersResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~ListUsersResponseDefaultTypeInternal() {}
+  union {
+    ListUsersResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ListUsersResponseDefaultTypeInternal _ListUsersResponse_default_instance_;
 PROTOBUF_CONSTEXPR DeleteUserResponse::DeleteUserResponse(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.success_)*/false
@@ -102,36 +140,8 @@ struct DeleteUserResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 DeleteUserResponseDefaultTypeInternal _DeleteUserResponse_default_instance_;
-PROTOBUF_CONSTEXPR UserList::UserList(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.users_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct UserListDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR UserListDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~UserListDefaultTypeInternal() {}
-  union {
-    UserList _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UserListDefaultTypeInternal _UserList_default_instance_;
-PROTOBUF_CONSTEXPR UpdateUserRequest::UpdateUserRequest(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.email_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.id_)*/0
-  , /*decltype(_impl_._cached_size_)*/{}} {}
-struct UpdateUserRequestDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR UpdateUserRequestDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~UpdateUserRequestDefaultTypeInternal() {}
-  union {
-    UpdateUserRequest _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 UpdateUserRequestDefaultTypeInternal _UpdateUserRequest_default_instance_;
 }  // namespace user
-static ::_pb::Metadata file_level_metadata_user_2eproto[8];
+static ::_pb::Metadata file_level_metadata_user_2eproto[9];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_user_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_user_2eproto = nullptr;
 
@@ -161,12 +171,26 @@ const uint32_t TableStruct_user_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pro
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::user::GetUserRequest, _impl_.id_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::user::UpdateUserRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::user::UpdateUserRequest, _impl_.name_),
+  PROTOBUF_FIELD_OFFSET(::user::UpdateUserRequest, _impl_.email_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::user::DeleteUserRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::user::DeleteUserRequest, _impl_.id_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::user::ListUsersRequest, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::user::UserResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -175,79 +199,69 @@ const uint32_t TableStruct_user_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(pro
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::user::UserResponse, _impl_.user_),
   ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::user::ListUsersResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::user::ListUsersResponse, _impl_.users_),
+  ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::user::DeleteUserResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::user::DeleteUserResponse, _impl_.success_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::user::UserList, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::user::UserList, _impl_.users_),
-  ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::user::UpdateUserRequest, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::user::UpdateUserRequest, _impl_.id_),
-  PROTOBUF_FIELD_OFFSET(::user::UpdateUserRequest, _impl_.name_),
-  PROTOBUF_FIELD_OFFSET(::user::UpdateUserRequest, _impl_.email_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::user::User)},
   { 9, -1, -1, sizeof(::user::CreateUserRequest)},
   { 17, -1, -1, sizeof(::user::GetUserRequest)},
-  { 24, -1, -1, sizeof(::user::DeleteUserRequest)},
-  { 31, -1, -1, sizeof(::user::UserResponse)},
-  { 38, -1, -1, sizeof(::user::DeleteUserResponse)},
-  { 45, -1, -1, sizeof(::user::UserList)},
-  { 52, -1, -1, sizeof(::user::UpdateUserRequest)},
+  { 24, -1, -1, sizeof(::user::UpdateUserRequest)},
+  { 32, -1, -1, sizeof(::user::DeleteUserRequest)},
+  { 39, -1, -1, sizeof(::user::ListUsersRequest)},
+  { 45, -1, -1, sizeof(::user::UserResponse)},
+  { 52, -1, -1, sizeof(::user::ListUsersResponse)},
+  { 59, -1, -1, sizeof(::user::DeleteUserResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
   &::user::_User_default_instance_._instance,
   &::user::_CreateUserRequest_default_instance_._instance,
   &::user::_GetUserRequest_default_instance_._instance,
-  &::user::_DeleteUserRequest_default_instance_._instance,
-  &::user::_UserResponse_default_instance_._instance,
-  &::user::_DeleteUserResponse_default_instance_._instance,
-  &::user::_UserList_default_instance_._instance,
   &::user::_UpdateUserRequest_default_instance_._instance,
+  &::user::_DeleteUserRequest_default_instance_._instance,
+  &::user::_ListUsersRequest_default_instance_._instance,
+  &::user::_UserResponse_default_instance_._instance,
+  &::user::_ListUsersResponse_default_instance_._instance,
+  &::user::_DeleteUserResponse_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_user_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\nuser.proto\022\004user\032\033google/protobuf/empt"
-  "y.proto\"/\n\004User\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001("
-  "\t\022\r\n\005email\030\003 \001(\t\"0\n\021CreateUserRequest\022\014\n"
-  "\004name\030\001 \001(\t\022\r\n\005email\030\002 \001(\t\"\034\n\016GetUserReq"
-  "uest\022\n\n\002id\030\001 \001(\005\"\037\n\021DeleteUserRequest\022\n\n"
-  "\002id\030\001 \001(\005\"(\n\014UserResponse\022\030\n\004user\030\001 \001(\0132"
-  "\n.user.User\"%\n\022DeleteUserResponse\022\017\n\007suc"
-  "cess\030\001 \001(\010\"%\n\010UserList\022\031\n\005users\030\001 \003(\0132\n."
-  "user.User\"<\n\021UpdateUserRequest\022\n\n\002id\030\001 \001"
-  "(\005\022\014\n\004name\030\002 \001(\t\022\r\n\005email\030\003 \001(\t2\256\002\n\013User"
-  "Service\0229\n\nCreateUser\022\027.user.CreateUserR"
-  "equest\032\022.user.UserResponse\0223\n\007GetUser\022\024."
-  "user.GetUserRequest\032\022.user.UserResponse\022"
-  "\?\n\nDeleteUser\022\027.user.DeleteUserRequest\032\030"
-  ".user.DeleteUserResponse\0223\n\tListUsers\022\026."
-  "google.protobuf.Empty\032\016.user.UserList\0229\n"
-  "\nUpdateUser\022\027.user.UpdateUserRequest\032\022.u"
-  "ser.UserResponseb\006proto3"
+  "\n\nuser.proto\022\004user\"/\n\004User\022\n\n\002id\030\001 \001(\005\022\014"
+  "\n\004name\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\"0\n\021CreateUse"
+  "rRequest\022\014\n\004name\030\001 \001(\t\022\r\n\005email\030\002 \001(\t\"\034\n"
+  "\016GetUserRequest\022\n\n\002id\030\001 \001(\005\"0\n\021UpdateUse"
+  "rRequest\022\014\n\004name\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\"\037\n"
+  "\021DeleteUserRequest\022\n\n\002id\030\001 \001(\005\"\022\n\020ListUs"
+  "ersRequest\"(\n\014UserResponse\022\030\n\004user\030\001 \001(\013"
+  "2\n.user.User\".\n\021ListUsersResponse\022\031\n\005use"
+  "rs\030\001 \003(\0132\n.user.User\"%\n\022DeleteUserRespon"
+  "se\022\017\n\007success\030\001 \001(\0102\267\002\n\013UserService\0229\n\nC"
+  "reateUser\022\027.user.CreateUserRequest\032\022.use"
+  "r.UserResponse\0223\n\007GetUser\022\024.user.GetUser"
+  "Request\032\022.user.UserResponse\0229\n\nUpdateUse"
+  "r\022\027.user.UpdateUserRequest\032\022.user.UserRe"
+  "sponse\022\?\n\nDeleteUser\022\027.user.DeleteUserRe"
+  "quest\032\030.user.DeleteUserResponse\022<\n\tListU"
+  "sers\022\026.user.ListUsersRequest\032\027.user.List"
+  "UsersResponseb\006proto3"
   ;
-static const ::_pbi::DescriptorTable* const descriptor_table_user_2eproto_deps[1] = {
-  &::descriptor_table_google_2fprotobuf_2fempty_2eproto,
-};
 static ::_pbi::once_flag descriptor_table_user_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_user_2eproto = {
-    false, false, 704, descriptor_table_protodef_user_2eproto,
+    false, false, 701, descriptor_table_protodef_user_2eproto,
     "user.proto",
-    &descriptor_table_user_2eproto_once, descriptor_table_user_2eproto_deps, 1, 8,
+    &descriptor_table_user_2eproto_once, nullptr, 0, 9,
     schemas, file_default_instances, TableStruct_user_2eproto::offsets,
     file_level_metadata_user_2eproto, file_level_enum_descriptors_user_2eproto,
     file_level_service_descriptors_user_2eproto,
@@ -973,6 +987,259 @@ void GetUserRequest::InternalSwap(GetUserRequest* other) {
 
 // ===================================================================
 
+class UpdateUserRequest::_Internal {
+ public:
+};
+
+UpdateUserRequest::UpdateUserRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:user.UpdateUserRequest)
+}
+UpdateUserRequest::UpdateUserRequest(const UpdateUserRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  UpdateUserRequest* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.email_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_name().empty()) {
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.email_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.email_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_email().empty()) {
+    _this->_impl_.email_.Set(from._internal_email(), 
+      _this->GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:user.UpdateUserRequest)
+}
+
+inline void UpdateUserRequest::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.name_){}
+    , decltype(_impl_.email_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.email_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.email_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+UpdateUserRequest::~UpdateUserRequest() {
+  // @@protoc_insertion_point(destructor:user.UpdateUserRequest)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void UpdateUserRequest::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.name_.Destroy();
+  _impl_.email_.Destroy();
+}
+
+void UpdateUserRequest::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void UpdateUserRequest::Clear() {
+// @@protoc_insertion_point(message_clear_start:user.UpdateUserRequest)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.name_.ClearToEmpty();
+  _impl_.email_.ClearToEmpty();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* UpdateUserRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // string name = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "user.UpdateUserRequest.name"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string email = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_email();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "user.UpdateUserRequest.email"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* UpdateUserRequest::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:user.UpdateUserRequest)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 2;
+  if (!this->_internal_name().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "user.UpdateUserRequest.name");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_name(), target);
+  }
+
+  // string email = 3;
+  if (!this->_internal_email().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_email().data(), static_cast<int>(this->_internal_email().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "user.UpdateUserRequest.email");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_email(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:user.UpdateUserRequest)
+  return target;
+}
+
+size_t UpdateUserRequest::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:user.UpdateUserRequest)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string name = 2;
+  if (!this->_internal_name().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  // string email = 3;
+  if (!this->_internal_email().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_email());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UpdateUserRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    UpdateUserRequest::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UpdateUserRequest::GetClassData() const { return &_class_data_; }
+
+
+void UpdateUserRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<UpdateUserRequest*>(&to_msg);
+  auto& from = static_cast<const UpdateUserRequest&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:user.UpdateUserRequest)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_name().empty()) {
+    _this->_internal_set_name(from._internal_name());
+  }
+  if (!from._internal_email().empty()) {
+    _this->_internal_set_email(from._internal_email());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void UpdateUserRequest::CopyFrom(const UpdateUserRequest& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:user.UpdateUserRequest)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool UpdateUserRequest::IsInitialized() const {
+  return true;
+}
+
+void UpdateUserRequest::InternalSwap(UpdateUserRequest* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.email_, lhs_arena,
+      &other->_impl_.email_, rhs_arena
+  );
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata UpdateUserRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_user_2eproto_getter, &descriptor_table_user_2eproto_once,
+      file_level_metadata_user_2eproto[3]);
+}
+
+// ===================================================================
+
 class DeleteUserRequest::_Internal {
  public:
 };
@@ -1146,7 +1413,47 @@ void DeleteUserRequest::InternalSwap(DeleteUserRequest* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteUserRequest::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_user_2eproto_getter, &descriptor_table_user_2eproto_once,
-      file_level_metadata_user_2eproto[3]);
+      file_level_metadata_user_2eproto[4]);
+}
+
+// ===================================================================
+
+class ListUsersRequest::_Internal {
+ public:
+};
+
+ListUsersRequest::ListUsersRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase(arena, is_message_owned) {
+  // @@protoc_insertion_point(arena_constructor:user.ListUsersRequest)
+}
+ListUsersRequest::ListUsersRequest(const ListUsersRequest& from)
+  : ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase() {
+  ListUsersRequest* const _this = this; (void)_this;
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:user.ListUsersRequest)
+}
+
+
+
+
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListUsersRequest::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::CopyImpl,
+    ::PROTOBUF_NAMESPACE_ID::internal::ZeroFieldsBase::MergeImpl,
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListUsersRequest::GetClassData() const { return &_class_data_; }
+
+
+
+
+
+
+
+::PROTOBUF_NAMESPACE_ID::Metadata ListUsersRequest::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_user_2eproto_getter, &descriptor_table_user_2eproto_once,
+      file_level_metadata_user_2eproto[5]);
 }
 
 // ===================================================================
@@ -1339,7 +1646,192 @@ void UserResponse::InternalSwap(UserResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata UserResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_user_2eproto_getter, &descriptor_table_user_2eproto_once,
-      file_level_metadata_user_2eproto[4]);
+      file_level_metadata_user_2eproto[6]);
+}
+
+// ===================================================================
+
+class ListUsersResponse::_Internal {
+ public:
+};
+
+ListUsersResponse::ListUsersResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:user.ListUsersResponse)
+}
+ListUsersResponse::ListUsersResponse(const ListUsersResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  ListUsersResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.users_){from._impl_.users_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:user.ListUsersResponse)
+}
+
+inline void ListUsersResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.users_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+ListUsersResponse::~ListUsersResponse() {
+  // @@protoc_insertion_point(destructor:user.ListUsersResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void ListUsersResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.users_.~RepeatedPtrField();
+}
+
+void ListUsersResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void ListUsersResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:user.ListUsersResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.users_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* ListUsersResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .user.User users = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_users(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* ListUsersResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:user.ListUsersResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .user.User users = 1;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_users_size()); i < n; i++) {
+    const auto& repfield = this->_internal_users(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:user.ListUsersResponse)
+  return target;
+}
+
+size_t ListUsersResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:user.ListUsersResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .user.User users = 1;
+  total_size += 1UL * this->_internal_users_size();
+  for (const auto& msg : this->_impl_.users_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData ListUsersResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    ListUsersResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*ListUsersResponse::GetClassData() const { return &_class_data_; }
+
+
+void ListUsersResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<ListUsersResponse*>(&to_msg);
+  auto& from = static_cast<const ListUsersResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:user.ListUsersResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.users_.MergeFrom(from._impl_.users_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void ListUsersResponse::CopyFrom(const ListUsersResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:user.ListUsersResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool ListUsersResponse::IsInitialized() const {
+  return true;
+}
+
+void ListUsersResponse::InternalSwap(ListUsersResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.users_.InternalSwap(&other->_impl_.users_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata ListUsersResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_user_2eproto_getter, &descriptor_table_user_2eproto_once,
+      file_level_metadata_user_2eproto[7]);
 }
 
 // ===================================================================
@@ -1517,472 +2009,7 @@ void DeleteUserResponse::InternalSwap(DeleteUserResponse* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata DeleteUserResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_user_2eproto_getter, &descriptor_table_user_2eproto_once,
-      file_level_metadata_user_2eproto[5]);
-}
-
-// ===================================================================
-
-class UserList::_Internal {
- public:
-};
-
-UserList::UserList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:user.UserList)
-}
-UserList::UserList(const UserList& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  UserList* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.users_){from._impl_.users_}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  // @@protoc_insertion_point(copy_constructor:user.UserList)
-}
-
-inline void UserList::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.users_){arena}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-}
-
-UserList::~UserList() {
-  // @@protoc_insertion_point(destructor:user.UserList)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void UserList::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.users_.~RepeatedPtrField();
-}
-
-void UserList::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void UserList::Clear() {
-// @@protoc_insertion_point(message_clear_start:user.UserList)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.users_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* UserList::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // repeated .user.User users = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            ptr = ctx->ParseMessage(_internal_add_users(), ptr);
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* UserList::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:user.UserList)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // repeated .user.User users = 1;
-  for (unsigned i = 0,
-      n = static_cast<unsigned>(this->_internal_users_size()); i < n; i++) {
-    const auto& repfield = this->_internal_users(i);
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:user.UserList)
-  return target;
-}
-
-size_t UserList::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:user.UserList)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // repeated .user.User users = 1;
-  total_size += 1UL * this->_internal_users_size();
-  for (const auto& msg : this->_impl_.users_) {
-    total_size +=
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UserList::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    UserList::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UserList::GetClassData() const { return &_class_data_; }
-
-
-void UserList::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<UserList*>(&to_msg);
-  auto& from = static_cast<const UserList&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:user.UserList)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  _this->_impl_.users_.MergeFrom(from._impl_.users_);
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void UserList::CopyFrom(const UserList& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:user.UserList)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool UserList::IsInitialized() const {
-  return true;
-}
-
-void UserList::InternalSwap(UserList* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  _impl_.users_.InternalSwap(&other->_impl_.users_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata UserList::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_user_2eproto_getter, &descriptor_table_user_2eproto_once,
-      file_level_metadata_user_2eproto[6]);
-}
-
-// ===================================================================
-
-class UpdateUserRequest::_Internal {
- public:
-};
-
-UpdateUserRequest::UpdateUserRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:user.UpdateUserRequest)
-}
-UpdateUserRequest::UpdateUserRequest(const UpdateUserRequest& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  UpdateUserRequest* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.name_){}
-    , decltype(_impl_.email_){}
-    , decltype(_impl_.id_){}
-    , /*decltype(_impl_._cached_size_)*/{}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.name_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_name().empty()) {
-    _this->_impl_.name_.Set(from._internal_name(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.email_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.email_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_email().empty()) {
-    _this->_impl_.email_.Set(from._internal_email(), 
-      _this->GetArenaForAllocation());
-  }
-  _this->_impl_.id_ = from._impl_.id_;
-  // @@protoc_insertion_point(copy_constructor:user.UpdateUserRequest)
-}
-
-inline void UpdateUserRequest::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_.name_){}
-    , decltype(_impl_.email_){}
-    , decltype(_impl_.id_){0}
-    , /*decltype(_impl_._cached_size_)*/{}
-  };
-  _impl_.name_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.email_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.email_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-}
-
-UpdateUserRequest::~UpdateUserRequest() {
-  // @@protoc_insertion_point(destructor:user.UpdateUserRequest)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void UpdateUserRequest::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.name_.Destroy();
-  _impl_.email_.Destroy();
-}
-
-void UpdateUserRequest::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void UpdateUserRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:user.UpdateUserRequest)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  _impl_.name_.ClearToEmpty();
-  _impl_.email_.ClearToEmpty();
-  _impl_.id_ = 0;
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* UpdateUserRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // int32 id = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string name = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_name();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "user.UpdateUserRequest.name"));
-        } else
-          goto handle_unusual;
-        continue;
-      // string email = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_email();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "user.UpdateUserRequest.email"));
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* UpdateUserRequest::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:user.UpdateUserRequest)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  // int32 id = 1;
-  if (this->_internal_id() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
-  }
-
-  // string name = 2;
-  if (!this->_internal_name().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "user.UpdateUserRequest.name");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_name(), target);
-  }
-
-  // string email = 3;
-  if (!this->_internal_email().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_email().data(), static_cast<int>(this->_internal_email().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "user.UpdateUserRequest.email");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_email(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:user.UpdateUserRequest)
-  return target;
-}
-
-size_t UpdateUserRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:user.UpdateUserRequest)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // string name = 2;
-  if (!this->_internal_name().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_name());
-  }
-
-  // string email = 3;
-  if (!this->_internal_email().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_email());
-  }
-
-  // int32 id = 1;
-  if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData UpdateUserRequest::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    UpdateUserRequest::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*UpdateUserRequest::GetClassData() const { return &_class_data_; }
-
-
-void UpdateUserRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<UpdateUserRequest*>(&to_msg);
-  auto& from = static_cast<const UpdateUserRequest&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:user.UpdateUserRequest)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (!from._internal_name().empty()) {
-    _this->_internal_set_name(from._internal_name());
-  }
-  if (!from._internal_email().empty()) {
-    _this->_internal_set_email(from._internal_email());
-  }
-  if (from._internal_id() != 0) {
-    _this->_internal_set_id(from._internal_id());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void UpdateUserRequest::CopyFrom(const UpdateUserRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:user.UpdateUserRequest)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool UpdateUserRequest::IsInitialized() const {
-  return true;
-}
-
-void UpdateUserRequest::InternalSwap(UpdateUserRequest* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.name_, lhs_arena,
-      &other->_impl_.name_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.email_, lhs_arena,
-      &other->_impl_.email_, rhs_arena
-  );
-  swap(_impl_.id_, other->_impl_.id_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata UpdateUserRequest::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_user_2eproto_getter, &descriptor_table_user_2eproto_once,
-      file_level_metadata_user_2eproto[7]);
+      file_level_metadata_user_2eproto[8]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -2000,25 +2027,29 @@ template<> PROTOBUF_NOINLINE ::user::GetUserRequest*
 Arena::CreateMaybeMessage< ::user::GetUserRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::user::GetUserRequest >(arena);
 }
+template<> PROTOBUF_NOINLINE ::user::UpdateUserRequest*
+Arena::CreateMaybeMessage< ::user::UpdateUserRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::user::UpdateUserRequest >(arena);
+}
 template<> PROTOBUF_NOINLINE ::user::DeleteUserRequest*
 Arena::CreateMaybeMessage< ::user::DeleteUserRequest >(Arena* arena) {
   return Arena::CreateMessageInternal< ::user::DeleteUserRequest >(arena);
+}
+template<> PROTOBUF_NOINLINE ::user::ListUsersRequest*
+Arena::CreateMaybeMessage< ::user::ListUsersRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::user::ListUsersRequest >(arena);
 }
 template<> PROTOBUF_NOINLINE ::user::UserResponse*
 Arena::CreateMaybeMessage< ::user::UserResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::user::UserResponse >(arena);
 }
+template<> PROTOBUF_NOINLINE ::user::ListUsersResponse*
+Arena::CreateMaybeMessage< ::user::ListUsersResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::user::ListUsersResponse >(arena);
+}
 template<> PROTOBUF_NOINLINE ::user::DeleteUserResponse*
 Arena::CreateMaybeMessage< ::user::DeleteUserResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::user::DeleteUserResponse >(arena);
-}
-template<> PROTOBUF_NOINLINE ::user::UserList*
-Arena::CreateMaybeMessage< ::user::UserList >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::user::UserList >(arena);
-}
-template<> PROTOBUF_NOINLINE ::user::UpdateUserRequest*
-Arena::CreateMaybeMessage< ::user::UpdateUserRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::user::UpdateUserRequest >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 
