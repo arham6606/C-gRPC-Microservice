@@ -2,6 +2,6 @@
 
 int main(void)
 {
-    cout << "Hello world" << endl;
+    run();
     return 0;
 }

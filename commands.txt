@@ -10,3 +10,7 @@ protoc --cpp_out=generated \
        user.proto
 //............................................................
 
+// To compile the codebase and run it user
+
+make
+./server

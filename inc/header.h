@@ -3,7 +3,8 @@
 #include <string>
 #include <unordered_map>
 #include <mutex>
-#include <threads.h>
+#include <grpcpp/grpcpp.h>
+#include <grpcpp/server_builder.h>
 using namespace std;
 
 #include "../proto/generated/user.grpc.pb.h"
@@ -19,6 +20,8 @@ using user::CreateUserRequest;
 using user::User;
 using user::UserResponse;
 using user::UserService;
+
+void run();
 
 class UserServiceImpl final : public UserService::Service
 {
