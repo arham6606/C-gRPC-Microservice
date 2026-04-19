@@ -19,275 +19,236 @@
 #include <grpcpp/server_context.h>
 #include <grpcpp/impl/service_type.h>
 #include <grpcpp/support/sync_stream.h>
-namespace user
-{
+namespace user {
 
-  static const char *UserService_method_names[] = {
-      "/user.UserService/CreateUser",
-      "/user.UserService/GetUser",
-      "/user.UserService/UpdateUser",
-      "/user.UserService/DeleteUser",
-      "/user.UserService/ListUsers",
-  };
+static const char* UserService_method_names[] = {
+  "/user.UserService/CreateUser",
+  "/user.UserService/GetUser",
+  "/user.UserService/UpdateUser",
+  "/user.UserService/DeleteUser",
+  "/user.UserService/ListUsers",
+};
 
-  std::unique_ptr<UserService::Stub> UserService::NewStub(const std::shared_ptr<::grpc::ChannelInterface> &channel, const ::grpc::StubOptions &options)
-  {
-    (void)options;
-    std::unique_ptr<UserService::Stub> stub(new UserService::Stub(channel, options));
-    return stub;
-  }
+std::unique_ptr< UserService::Stub> UserService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
+  (void)options;
+  std::unique_ptr< UserService::Stub> stub(new UserService::Stub(channel, options));
+  return stub;
+}
 
-  UserService::Stub::Stub(const std::shared_ptr<::grpc::ChannelInterface> &channel, const ::grpc::StubOptions &options)
-      : channel_(channel), rpcmethod_CreateUser_(UserService_method_names[0], options.suffix_for_stats(), ::grpc::internal::RpcMethod::NORMAL_RPC, channel), rpcmethod_GetUser_(UserService_method_names[1], options.suffix_for_stats(), ::grpc::internal::RpcMethod::NORMAL_RPC, channel), rpcmethod_UpdateUser_(UserService_method_names[2], options.suffix_for_stats(), ::grpc::internal::RpcMethod::NORMAL_RPC, channel), rpcmethod_DeleteUser_(UserService_method_names[3], options.suffix_for_stats(), ::grpc::internal::RpcMethod::NORMAL_RPC, channel), rpcmethod_ListUsers_(UserService_method_names[4], options.suffix_for_stats(), ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  {
-  }
+UserService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options)
+  : channel_(channel), rpcmethod_CreateUser_(UserService_method_names[0], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetUser_(UserService_method_names[1], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_UpdateUser_(UserService_method_names[2], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DeleteUser_(UserService_method_names[3], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_ListUsers_(UserService_method_names[4], options.suffix_for_stats(),::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  {}
 
-  ::grpc::Status UserService::Stub::CreateUser(::grpc::ClientContext *context, const ::user::CreateUserRequest &request, ::user::UserResponse *response)
-  {
-    return ::grpc::internal::BlockingUnaryCall<::user::CreateUserRequest, ::user::UserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CreateUser_, context, request, response);
-  }
+::grpc::Status UserService::Stub::CreateUser(::grpc::ClientContext* context, const ::user::CreateUserRequest& request, ::user::UserResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::user::CreateUserRequest, ::user::UserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_CreateUser_, context, request, response);
+}
 
-  void UserService::Stub::async::CreateUser(::grpc::ClientContext *context, const ::user::CreateUserRequest *request, ::user::UserResponse *response, std::function<void(::grpc::Status)> f)
-  {
-    ::grpc::internal::CallbackUnaryCall<::user::CreateUserRequest, ::user::UserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateUser_, context, request, response, std::move(f));
-  }
+void UserService::Stub::async::CreateUser(::grpc::ClientContext* context, const ::user::CreateUserRequest* request, ::user::UserResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::user::CreateUserRequest, ::user::UserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateUser_, context, request, response, std::move(f));
+}
 
-  void UserService::Stub::async::CreateUser(::grpc::ClientContext *context, const ::user::CreateUserRequest *request, ::user::UserResponse *response, ::grpc::ClientUnaryReactor *reactor)
-  {
-    ::grpc::internal::ClientCallbackUnaryFactory::Create<::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateUser_, context, request, response, reactor);
-  }
+void UserService::Stub::async::CreateUser(::grpc::ClientContext* context, const ::user::CreateUserRequest* request, ::user::UserResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_CreateUser_, context, request, response, reactor);
+}
 
-  ::grpc::ClientAsyncResponseReader<::user::UserResponse> *UserService::Stub::PrepareAsyncCreateUserRaw(::grpc::ClientContext *context, const ::user::CreateUserRequest &request, ::grpc::CompletionQueue *cq)
-  {
-    return ::grpc::internal::ClientAsyncResponseReaderHelper::Create<::user::UserResponse, ::user::CreateUserRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CreateUser_, context, request);
-  }
+::grpc::ClientAsyncResponseReader< ::user::UserResponse>* UserService::Stub::PrepareAsyncCreateUserRaw(::grpc::ClientContext* context, const ::user::CreateUserRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::user::UserResponse, ::user::CreateUserRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_CreateUser_, context, request);
+}
 
-  ::grpc::ClientAsyncResponseReader<::user::UserResponse> *UserService::Stub::AsyncCreateUserRaw(::grpc::ClientContext *context, const ::user::CreateUserRequest &request, ::grpc::CompletionQueue *cq)
-  {
-    auto *result =
-        this->PrepareAsyncCreateUserRaw(context, request, cq);
-    result->StartCall();
-    return result;
-  }
+::grpc::ClientAsyncResponseReader< ::user::UserResponse>* UserService::Stub::AsyncCreateUserRaw(::grpc::ClientContext* context, const ::user::CreateUserRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncCreateUserRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
 
-  ::grpc::Status UserService::Stub::GetUser(::grpc::ClientContext *context, const ::user::GetUserRequest &request, ::user::UserResponse *response)
-  {
-    return ::grpc::internal::BlockingUnaryCall<::user::GetUserRequest, ::user::UserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetUser_, context, request, response);
-  }
+::grpc::Status UserService::Stub::GetUser(::grpc::ClientContext* context, const ::user::GetUserRequest& request, ::user::UserResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::user::GetUserRequest, ::user::UserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_GetUser_, context, request, response);
+}
 
-  void UserService::Stub::async::GetUser(::grpc::ClientContext *context, const ::user::GetUserRequest *request, ::user::UserResponse *response, std::function<void(::grpc::Status)> f)
-  {
-    ::grpc::internal::CallbackUnaryCall<::user::GetUserRequest, ::user::UserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetUser_, context, request, response, std::move(f));
-  }
+void UserService::Stub::async::GetUser(::grpc::ClientContext* context, const ::user::GetUserRequest* request, ::user::UserResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::user::GetUserRequest, ::user::UserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetUser_, context, request, response, std::move(f));
+}
 
-  void UserService::Stub::async::GetUser(::grpc::ClientContext *context, const ::user::GetUserRequest *request, ::user::UserResponse *response, ::grpc::ClientUnaryReactor *reactor)
-  {
-    ::grpc::internal::ClientCallbackUnaryFactory::Create<::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetUser_, context, request, response, reactor);
-  }
+void UserService::Stub::async::GetUser(::grpc::ClientContext* context, const ::user::GetUserRequest* request, ::user::UserResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_GetUser_, context, request, response, reactor);
+}
 
-  ::grpc::ClientAsyncResponseReader<::user::UserResponse> *UserService::Stub::PrepareAsyncGetUserRaw(::grpc::ClientContext *context, const ::user::GetUserRequest &request, ::grpc::CompletionQueue *cq)
-  {
-    return ::grpc::internal::ClientAsyncResponseReaderHelper::Create<::user::UserResponse, ::user::GetUserRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetUser_, context, request);
-  }
+::grpc::ClientAsyncResponseReader< ::user::UserResponse>* UserService::Stub::PrepareAsyncGetUserRaw(::grpc::ClientContext* context, const ::user::GetUserRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::user::UserResponse, ::user::GetUserRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_GetUser_, context, request);
+}
 
-  ::grpc::ClientAsyncResponseReader<::user::UserResponse> *UserService::Stub::AsyncGetUserRaw(::grpc::ClientContext *context, const ::user::GetUserRequest &request, ::grpc::CompletionQueue *cq)
-  {
-    auto *result =
-        this->PrepareAsyncGetUserRaw(context, request, cq);
-    result->StartCall();
-    return result;
-  }
+::grpc::ClientAsyncResponseReader< ::user::UserResponse>* UserService::Stub::AsyncGetUserRaw(::grpc::ClientContext* context, const ::user::GetUserRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncGetUserRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
 
-  ::grpc::Status UserService::Stub::UpdateUser(::grpc::ClientContext *context, const ::user::UpdateUserRequest &request, ::user::UserResponse *response)
-  {
-    return ::grpc::internal::BlockingUnaryCall<::user::UpdateUserRequest, ::user::UserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_UpdateUser_, context, request, response);
-  }
+::grpc::Status UserService::Stub::UpdateUser(::grpc::ClientContext* context, const ::user::UpdateUserRequest& request, ::user::UserResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::user::UpdateUserRequest, ::user::UserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_UpdateUser_, context, request, response);
+}
 
-  void UserService::Stub::async::UpdateUser(::grpc::ClientContext *context, const ::user::UpdateUserRequest *request, ::user::UserResponse *response, std::function<void(::grpc::Status)> f)
-  {
-    ::grpc::internal::CallbackUnaryCall<::user::UpdateUserRequest, ::user::UserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateUser_, context, request, response, std::move(f));
-  }
+void UserService::Stub::async::UpdateUser(::grpc::ClientContext* context, const ::user::UpdateUserRequest* request, ::user::UserResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::user::UpdateUserRequest, ::user::UserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateUser_, context, request, response, std::move(f));
+}
 
-  void UserService::Stub::async::UpdateUser(::grpc::ClientContext *context, const ::user::UpdateUserRequest *request, ::user::UserResponse *response, ::grpc::ClientUnaryReactor *reactor)
-  {
-    ::grpc::internal::ClientCallbackUnaryFactory::Create<::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateUser_, context, request, response, reactor);
-  }
+void UserService::Stub::async::UpdateUser(::grpc::ClientContext* context, const ::user::UpdateUserRequest* request, ::user::UserResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_UpdateUser_, context, request, response, reactor);
+}
 
-  ::grpc::ClientAsyncResponseReader<::user::UserResponse> *UserService::Stub::PrepareAsyncUpdateUserRaw(::grpc::ClientContext *context, const ::user::UpdateUserRequest &request, ::grpc::CompletionQueue *cq)
-  {
-    return ::grpc::internal::ClientAsyncResponseReaderHelper::Create<::user::UserResponse, ::user::UpdateUserRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_UpdateUser_, context, request);
-  }
+::grpc::ClientAsyncResponseReader< ::user::UserResponse>* UserService::Stub::PrepareAsyncUpdateUserRaw(::grpc::ClientContext* context, const ::user::UpdateUserRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::user::UserResponse, ::user::UpdateUserRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_UpdateUser_, context, request);
+}
 
-  ::grpc::ClientAsyncResponseReader<::user::UserResponse> *UserService::Stub::AsyncUpdateUserRaw(::grpc::ClientContext *context, const ::user::UpdateUserRequest &request, ::grpc::CompletionQueue *cq)
-  {
-    auto *result =
-        this->PrepareAsyncUpdateUserRaw(context, request, cq);
-    result->StartCall();
-    return result;
-  }
+::grpc::ClientAsyncResponseReader< ::user::UserResponse>* UserService::Stub::AsyncUpdateUserRaw(::grpc::ClientContext* context, const ::user::UpdateUserRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncUpdateUserRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
 
-  ::grpc::Status UserService::Stub::DeleteUser(::grpc::ClientContext *context, const ::user::DeleteUserRequest &request, ::user::DeleteUserResponse *response)
-  {
-    return ::grpc::internal::BlockingUnaryCall<::user::DeleteUserRequest, ::user::DeleteUserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_DeleteUser_, context, request, response);
-  }
+::grpc::Status UserService::Stub::DeleteUser(::grpc::ClientContext* context, const ::user::DeleteUserRequest& request, ::user::DeleteUserResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::user::DeleteUserRequest, ::user::DeleteUserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_DeleteUser_, context, request, response);
+}
 
-  void UserService::Stub::async::DeleteUser(::grpc::ClientContext *context, const ::user::DeleteUserRequest *request, ::user::DeleteUserResponse *response, std::function<void(::grpc::Status)> f)
-  {
-    ::grpc::internal::CallbackUnaryCall<::user::DeleteUserRequest, ::user::DeleteUserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DeleteUser_, context, request, response, std::move(f));
-  }
+void UserService::Stub::async::DeleteUser(::grpc::ClientContext* context, const ::user::DeleteUserRequest* request, ::user::DeleteUserResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::user::DeleteUserRequest, ::user::DeleteUserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DeleteUser_, context, request, response, std::move(f));
+}
 
-  void UserService::Stub::async::DeleteUser(::grpc::ClientContext *context, const ::user::DeleteUserRequest *request, ::user::DeleteUserResponse *response, ::grpc::ClientUnaryReactor *reactor)
-  {
-    ::grpc::internal::ClientCallbackUnaryFactory::Create<::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DeleteUser_, context, request, response, reactor);
-  }
+void UserService::Stub::async::DeleteUser(::grpc::ClientContext* context, const ::user::DeleteUserRequest* request, ::user::DeleteUserResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_DeleteUser_, context, request, response, reactor);
+}
 
-  ::grpc::ClientAsyncResponseReader<::user::DeleteUserResponse> *UserService::Stub::PrepareAsyncDeleteUserRaw(::grpc::ClientContext *context, const ::user::DeleteUserRequest &request, ::grpc::CompletionQueue *cq)
-  {
-    return ::grpc::internal::ClientAsyncResponseReaderHelper::Create<::user::DeleteUserResponse, ::user::DeleteUserRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_DeleteUser_, context, request);
-  }
+::grpc::ClientAsyncResponseReader< ::user::DeleteUserResponse>* UserService::Stub::PrepareAsyncDeleteUserRaw(::grpc::ClientContext* context, const ::user::DeleteUserRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::user::DeleteUserResponse, ::user::DeleteUserRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_DeleteUser_, context, request);
+}
 
-  ::grpc::ClientAsyncResponseReader<::user::DeleteUserResponse> *UserService::Stub::AsyncDeleteUserRaw(::grpc::ClientContext *context, const ::user::DeleteUserRequest &request, ::grpc::CompletionQueue *cq)
-  {
-    auto *result =
-        this->PrepareAsyncDeleteUserRaw(context, request, cq);
-    result->StartCall();
-    return result;
-  }
+::grpc::ClientAsyncResponseReader< ::user::DeleteUserResponse>* UserService::Stub::AsyncDeleteUserRaw(::grpc::ClientContext* context, const ::user::DeleteUserRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncDeleteUserRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
 
-  ::grpc::Status UserService::Stub::ListUsers(::grpc::ClientContext *context, const ::user::ListUsersRequest &request, ::user::ListUsersResponse *response)
-  {
-    return ::grpc::internal::BlockingUnaryCall<::user::ListUsersRequest, ::user::ListUsersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ListUsers_, context, request, response);
-  }
+::grpc::Status UserService::Stub::ListUsers(::grpc::ClientContext* context, const ::user::ListUsersRequest& request, ::user::ListUsersResponse* response) {
+  return ::grpc::internal::BlockingUnaryCall< ::user::ListUsersRequest, ::user::ListUsersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), rpcmethod_ListUsers_, context, request, response);
+}
 
-  void UserService::Stub::async::ListUsers(::grpc::ClientContext *context, const ::user::ListUsersRequest *request, ::user::ListUsersResponse *response, std::function<void(::grpc::Status)> f)
-  {
-    ::grpc::internal::CallbackUnaryCall<::user::ListUsersRequest, ::user::ListUsersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ListUsers_, context, request, response, std::move(f));
-  }
+void UserService::Stub::async::ListUsers(::grpc::ClientContext* context, const ::user::ListUsersRequest* request, ::user::ListUsersResponse* response, std::function<void(::grpc::Status)> f) {
+  ::grpc::internal::CallbackUnaryCall< ::user::ListUsersRequest, ::user::ListUsersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ListUsers_, context, request, response, std::move(f));
+}
 
-  void UserService::Stub::async::ListUsers(::grpc::ClientContext *context, const ::user::ListUsersRequest *request, ::user::ListUsersResponse *response, ::grpc::ClientUnaryReactor *reactor)
-  {
-    ::grpc::internal::ClientCallbackUnaryFactory::Create<::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ListUsers_, context, request, response, reactor);
-  }
+void UserService::Stub::async::ListUsers(::grpc::ClientContext* context, const ::user::ListUsersRequest* request, ::user::ListUsersResponse* response, ::grpc::ClientUnaryReactor* reactor) {
+  ::grpc::internal::ClientCallbackUnaryFactory::Create< ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(stub_->channel_.get(), stub_->rpcmethod_ListUsers_, context, request, response, reactor);
+}
 
-  ::grpc::ClientAsyncResponseReader<::user::ListUsersResponse> *UserService::Stub::PrepareAsyncListUsersRaw(::grpc::ClientContext *context, const ::user::ListUsersRequest &request, ::grpc::CompletionQueue *cq)
-  {
-    return ::grpc::internal::ClientAsyncResponseReaderHelper::Create<::user::ListUsersResponse, ::user::ListUsersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ListUsers_, context, request);
-  }
+::grpc::ClientAsyncResponseReader< ::user::ListUsersResponse>* UserService::Stub::PrepareAsyncListUsersRaw(::grpc::ClientContext* context, const ::user::ListUsersRequest& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderHelper::Create< ::user::ListUsersResponse, ::user::ListUsersRequest, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(channel_.get(), cq, rpcmethod_ListUsers_, context, request);
+}
 
-  ::grpc::ClientAsyncResponseReader<::user::ListUsersResponse> *UserService::Stub::AsyncListUsersRaw(::grpc::ClientContext *context, const ::user::ListUsersRequest &request, ::grpc::CompletionQueue *cq)
-  {
-    auto *result =
-        this->PrepareAsyncListUsersRaw(context, request, cq);
-    result->StartCall();
-    return result;
-  }
+::grpc::ClientAsyncResponseReader< ::user::ListUsersResponse>* UserService::Stub::AsyncListUsersRaw(::grpc::ClientContext* context, const ::user::ListUsersRequest& request, ::grpc::CompletionQueue* cq) {
+  auto* result =
+    this->PrepareAsyncListUsersRaw(context, request, cq);
+  result->StartCall();
+  return result;
+}
 
-  UserService::Service::Service()
-  {
-    AddMethod(new ::grpc::internal::RpcServiceMethod(
-        UserService_method_names[0],
-        ::grpc::internal::RpcMethod::NORMAL_RPC,
-        new ::grpc::internal::RpcMethodHandler<UserService::Service, ::user::CreateUserRequest, ::user::UserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-            [](UserService::Service *service,
-               ::grpc::ServerContext *ctx,
-               const ::user::CreateUserRequest *req,
-               ::user::UserResponse *resp)
-            {
-              return service->CreateUser(ctx, req, resp);
-            },
-            this)));
-    AddMethod(new ::grpc::internal::RpcServiceMethod(
-        UserService_method_names[1],
-        ::grpc::internal::RpcMethod::NORMAL_RPC,
-        new ::grpc::internal::RpcMethodHandler<UserService::Service, ::user::GetUserRequest, ::user::UserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-            [](UserService::Service *service,
-               ::grpc::ServerContext *ctx,
-               const ::user::GetUserRequest *req,
-               ::user::UserResponse *resp)
-            {
-              return service->GetUser(ctx, req, resp);
-            },
-            this)));
-    AddMethod(new ::grpc::internal::RpcServiceMethod(
-        UserService_method_names[2],
-        ::grpc::internal::RpcMethod::NORMAL_RPC,
-        new ::grpc::internal::RpcMethodHandler<UserService::Service, ::user::UpdateUserRequest, ::user::UserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-            [](UserService::Service *service,
-               ::grpc::ServerContext *ctx,
-               const ::user::UpdateUserRequest *req,
-               ::user::UserResponse *resp)
-            {
-              return service->UpdateUser(ctx, req, resp);
-            },
-            this)));
-    AddMethod(new ::grpc::internal::RpcServiceMethod(
-        UserService_method_names[3],
-        ::grpc::internal::RpcMethod::NORMAL_RPC,
-        new ::grpc::internal::RpcMethodHandler<UserService::Service, ::user::DeleteUserRequest, ::user::DeleteUserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-            [](UserService::Service *service,
-               ::grpc::ServerContext *ctx,
-               const ::user::DeleteUserRequest *req,
-               ::user::DeleteUserResponse *resp)
-            {
-              return service->DeleteUser(ctx, req, resp);
-            },
-            this)));
-    AddMethod(new ::grpc::internal::RpcServiceMethod(
-        UserService_method_names[4],
-        ::grpc::internal::RpcMethod::NORMAL_RPC,
-        new ::grpc::internal::RpcMethodHandler<UserService::Service, ::user::ListUsersRequest, ::user::ListUsersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
-            [](UserService::Service *service,
-               ::grpc::ServerContext *ctx,
-               const ::user::ListUsersRequest *req,
-               ::user::ListUsersResponse *resp)
-            {
-              return service->ListUsers(ctx, req, resp);
-            },
-            this)));
-  }
+UserService::Service::Service() {
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      UserService_method_names[0],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< UserService::Service, ::user::CreateUserRequest, ::user::UserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](UserService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::user::CreateUserRequest* req,
+             ::user::UserResponse* resp) {
+               return service->CreateUser(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      UserService_method_names[1],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< UserService::Service, ::user::GetUserRequest, ::user::UserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](UserService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::user::GetUserRequest* req,
+             ::user::UserResponse* resp) {
+               return service->GetUser(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      UserService_method_names[2],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< UserService::Service, ::user::UpdateUserRequest, ::user::UserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](UserService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::user::UpdateUserRequest* req,
+             ::user::UserResponse* resp) {
+               return service->UpdateUser(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      UserService_method_names[3],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< UserService::Service, ::user::DeleteUserRequest, ::user::DeleteUserResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](UserService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::user::DeleteUserRequest* req,
+             ::user::DeleteUserResponse* resp) {
+               return service->DeleteUser(ctx, req, resp);
+             }, this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      UserService_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< UserService::Service, ::user::ListUsersRequest, ::user::ListUsersResponse, ::grpc::protobuf::MessageLite, ::grpc::protobuf::MessageLite>(
+          [](UserService::Service* service,
+             ::grpc::ServerContext* ctx,
+             const ::user::ListUsersRequest* req,
+             ::user::ListUsersResponse* resp) {
+               return service->ListUsers(ctx, req, resp);
+             }, this)));
+}
 
-  UserService::Service::~Service()
-  {
-  }
+UserService::Service::~Service() {
+}
 
-  ::grpc::Status UserService::Service::CreateUser(::grpc::ServerContext *context, const ::user::CreateUserRequest *request, ::user::UserResponse *response)
-  {
-    (void)context;
-    (void)request;
-    (void)response;
-    return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-  }
+::grpc::Status UserService::Service::CreateUser(::grpc::ServerContext* context, const ::user::CreateUserRequest* request, ::user::UserResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
 
-  ::grpc::Status UserService::Service::GetUser(::grpc::ServerContext *context, const ::user::GetUserRequest *request, ::user::UserResponse *response)
-  {
-    (void)context;
-    (void)request;
-    (void)response;
-    return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-  }
+::grpc::Status UserService::Service::GetUser(::grpc::ServerContext* context, const ::user::GetUserRequest* request, ::user::UserResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
 
-  ::grpc::Status UserService::Service::UpdateUser(::grpc::ServerContext *context, const ::user::UpdateUserRequest *request, ::user::UserResponse *response)
-  {
-    (void)context;
-    (void)request;
-    (void)response;
-    return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-  }
+::grpc::Status UserService::Service::UpdateUser(::grpc::ServerContext* context, const ::user::UpdateUserRequest* request, ::user::UserResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
 
-  ::grpc::Status UserService::Service::DeleteUser(::grpc::ServerContext *context, const ::user::DeleteUserRequest *request, ::user::DeleteUserResponse *response)
-  {
-    (void)context;
-    (void)request;
-    (void)response;
-    return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-  }
+::grpc::Status UserService::Service::DeleteUser(::grpc::ServerContext* context, const ::user::DeleteUserRequest* request, ::user::DeleteUserResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
 
-  ::grpc::Status UserService::Service::ListUsers(::grpc::ServerContext *context, const ::user::ListUsersRequest *request, ::user::ListUsersResponse *response)
-  {
-    (void)context;
-    (void)request;
-    (void)response;
-    return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
-  }
+::grpc::Status UserService::Service::ListUsers(::grpc::ServerContext* context, const ::user::ListUsersRequest* request, ::user::ListUsersResponse* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
 
-} // namespace user
+
+}  // namespace user
+
