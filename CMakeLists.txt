@@ -16,6 +16,25 @@ add_executable(server
     proto/generated/user.grpc.pb.cc
 )
 
+add_executable(client
+    client-testing/client.cpp
+    proto/generated/user.pb.cc
+    proto/generated/user.grpc.pb.cc
+)
+
+target_include_directories(client PRIVATE
+    ${CMAKE_CURRENT_SOURCE_DIR}/inc
+    ${CMAKE_CURRENT_SOURCE_DIR}/proto/generated
+    ${CMAKE_CURRENT_SOURCE_DIR}/client-testing
+    ${GRPC_INCLUDE_DIRS}
+    ${PROTOBUF_INCLUDE_DIRS}
+)
+
+target_link_libraries(client
+    ${GRPC_LIBRARIES}
+    ${PROTOBUF_LIBRARIES}
+)
+
 target_include_directories(server PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/inc
     ${CMAKE_CURRENT_SOURCE_DIR}/proto/generated

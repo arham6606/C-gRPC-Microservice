@@ -129,12 +129,50 @@ server/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/build
 .PHONY : server/fast
 
+#=============================================================================
+# Target rules for targets named client
+
+# Build rule for target.
+client: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 client
+.PHONY : client
+
+# fast build rule for target.
+client/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/build
+.PHONY : client/fast
+
+client-testing/client.o: client-testing/client.cpp.o
+.PHONY : client-testing/client.o
+
+# target to build an object file
+client-testing/client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/client-testing/client.cpp.o
+.PHONY : client-testing/client.cpp.o
+
+client-testing/client.i: client-testing/client.cpp.i
+.PHONY : client-testing/client.i
+
+# target to preprocess a source file
+client-testing/client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/client-testing/client.cpp.i
+.PHONY : client-testing/client.cpp.i
+
+client-testing/client.s: client-testing/client.cpp.s
+.PHONY : client-testing/client.s
+
+# target to generate assembly for a file
+client-testing/client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/client-testing/client.cpp.s
+.PHONY : client-testing/client.cpp.s
+
 proto/generated/user.grpc.pb.o: proto/generated/user.grpc.pb.cc.o
 .PHONY : proto/generated/user.grpc.pb.o
 
 # target to build an object file
 proto/generated/user.grpc.pb.cc.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/proto/generated/user.grpc.pb.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/proto/generated/user.grpc.pb.cc.o
 .PHONY : proto/generated/user.grpc.pb.cc.o
 
 proto/generated/user.grpc.pb.i: proto/generated/user.grpc.pb.cc.i
@@ -143,6 +181,7 @@ proto/generated/user.grpc.pb.i: proto/generated/user.grpc.pb.cc.i
 # target to preprocess a source file
 proto/generated/user.grpc.pb.cc.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/proto/generated/user.grpc.pb.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/proto/generated/user.grpc.pb.cc.i
 .PHONY : proto/generated/user.grpc.pb.cc.i
 
 proto/generated/user.grpc.pb.s: proto/generated/user.grpc.pb.cc.s
@@ -151,6 +190,7 @@ proto/generated/user.grpc.pb.s: proto/generated/user.grpc.pb.cc.s
 # target to generate assembly for a file
 proto/generated/user.grpc.pb.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/proto/generated/user.grpc.pb.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/proto/generated/user.grpc.pb.cc.s
 .PHONY : proto/generated/user.grpc.pb.cc.s
 
 proto/generated/user.pb.o: proto/generated/user.pb.cc.o
@@ -159,6 +199,7 @@ proto/generated/user.pb.o: proto/generated/user.pb.cc.o
 # target to build an object file
 proto/generated/user.pb.cc.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/proto/generated/user.pb.cc.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/proto/generated/user.pb.cc.o
 .PHONY : proto/generated/user.pb.cc.o
 
 proto/generated/user.pb.i: proto/generated/user.pb.cc.i
@@ -167,6 +208,7 @@ proto/generated/user.pb.i: proto/generated/user.pb.cc.i
 # target to preprocess a source file
 proto/generated/user.pb.cc.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/proto/generated/user.pb.cc.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/proto/generated/user.pb.cc.i
 .PHONY : proto/generated/user.pb.cc.i
 
 proto/generated/user.pb.s: proto/generated/user.pb.cc.s
@@ -175,6 +217,7 @@ proto/generated/user.pb.s: proto/generated/user.pb.cc.s
 # target to generate assembly for a file
 proto/generated/user.pb.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/proto/generated/user.pb.cc.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/client.dir/build.make CMakeFiles/client.dir/proto/generated/user.pb.cc.s
 .PHONY : proto/generated/user.pb.cc.s
 
 src/main.o: src/main.cpp.o
@@ -257,7 +300,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... client"
 	@echo "... server"
+	@echo "... client-testing/client.o"
+	@echo "... client-testing/client.i"
+	@echo "... client-testing/client.s"
 	@echo "... proto/generated/user.grpc.pb.o"
 	@echo "... proto/generated/user.grpc.pb.i"
 	@echo "... proto/generated/user.grpc.pb.s"
