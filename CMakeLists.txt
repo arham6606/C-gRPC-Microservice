@@ -8,7 +8,10 @@ find_package(PkgConfig REQUIRED)
 pkg_check_modules(GRPC REQUIRED grpc++)
 pkg_check_modules(PROTOBUF REQUIRED protobuf)
 
-file(GLOB_RECURSE SRC_FILES "src/*.cpp")
+file(GLOB_RECURSE SRC_FILES 
+    "src/*.cpp"
+    "src/server/*.cpp"
+)
 
 add_executable(server
     ${SRC_FILES}

@@ -12,7 +12,7 @@ Status UserServiceImpl::CreateUser(ServerContext *context, const CreateUserReque
 
     for (auto &[id, user] : users_db)
     {
-    
+
         if (user.email() == request->email())
         {
             return Status(grpc::ALREADY_EXISTS, "Email already registerd");

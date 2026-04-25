@@ -97,24 +97,38 @@ CMakeFiles/server.dir/src/run_server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/run_server.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/src/run_server.cpp -o CMakeFiles/server.dir/src/run_server.cpp.s
 
-CMakeFiles/server.dir/src/server.cpp.o: CMakeFiles/server.dir/flags.make
-CMakeFiles/server.dir/src/server.cpp.o: /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/src/server.cpp
-CMakeFiles/server.dir/src/server.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/server.dir/src/server.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/server.cpp.o -MF CMakeFiles/server.dir/src/server.cpp.o.d -o CMakeFiles/server.dir/src/server.cpp.o -c /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/src/server.cpp
+CMakeFiles/server.dir/src/server/create_user.cpp.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/src/server/create_user.cpp.o: /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/src/server/create_user.cpp
+CMakeFiles/server.dir/src/server/create_user.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/server.dir/src/server/create_user.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/server/create_user.cpp.o -MF CMakeFiles/server.dir/src/server/create_user.cpp.o.d -o CMakeFiles/server.dir/src/server/create_user.cpp.o -c /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/src/server/create_user.cpp
 
-CMakeFiles/server.dir/src/server.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/server.dir/src/server.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/src/server.cpp > CMakeFiles/server.dir/src/server.cpp.i
+CMakeFiles/server.dir/src/server/create_user.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/server.dir/src/server/create_user.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/src/server/create_user.cpp > CMakeFiles/server.dir/src/server/create_user.cpp.i
 
-CMakeFiles/server.dir/src/server.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/server.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/src/server.cpp -o CMakeFiles/server.dir/src/server.cpp.s
+CMakeFiles/server.dir/src/server/create_user.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/server/create_user.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/src/server/create_user.cpp -o CMakeFiles/server.dir/src/server/create_user.cpp.s
+
+CMakeFiles/server.dir/src/server/get_user.cpp.o: CMakeFiles/server.dir/flags.make
+CMakeFiles/server.dir/src/server/get_user.cpp.o: /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/src/server/get_user.cpp
+CMakeFiles/server.dir/src/server/get_user.cpp.o: CMakeFiles/server.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/server.dir/src/server/get_user.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/src/server/get_user.cpp.o -MF CMakeFiles/server.dir/src/server/get_user.cpp.o.d -o CMakeFiles/server.dir/src/server/get_user.cpp.o -c /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/src/server/get_user.cpp
+
+CMakeFiles/server.dir/src/server/get_user.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/server.dir/src/server/get_user.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/src/server/get_user.cpp > CMakeFiles/server.dir/src/server/get_user.cpp.i
+
+CMakeFiles/server.dir/src/server/get_user.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/server.dir/src/server/get_user.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/src/server/get_user.cpp -o CMakeFiles/server.dir/src/server/get_user.cpp.s
 
 CMakeFiles/server.dir/proto/generated/user.pb.cc.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/proto/generated/user.pb.cc.o: /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/proto/generated/user.pb.cc
 CMakeFiles/server.dir/proto/generated/user.pb.cc.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/server.dir/proto/generated/user.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/server.dir/proto/generated/user.pb.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/proto/generated/user.pb.cc.o -MF CMakeFiles/server.dir/proto/generated/user.pb.cc.o.d -o CMakeFiles/server.dir/proto/generated/user.pb.cc.o -c /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/proto/generated/user.pb.cc
 
 CMakeFiles/server.dir/proto/generated/user.pb.cc.i: cmake_force
@@ -128,7 +142,7 @@ CMakeFiles/server.dir/proto/generated/user.pb.cc.s: cmake_force
 CMakeFiles/server.dir/proto/generated/user.grpc.pb.cc.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/proto/generated/user.grpc.pb.cc.o: /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/proto/generated/user.grpc.pb.cc
 CMakeFiles/server.dir/proto/generated/user.grpc.pb.cc.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/server.dir/proto/generated/user.grpc.pb.cc.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/server.dir/proto/generated/user.grpc.pb.cc.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/server.dir/proto/generated/user.grpc.pb.cc.o -MF CMakeFiles/server.dir/proto/generated/user.grpc.pb.cc.o.d -o CMakeFiles/server.dir/proto/generated/user.grpc.pb.cc.o -c /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/proto/generated/user.grpc.pb.cc
 
 CMakeFiles/server.dir/proto/generated/user.grpc.pb.cc.i: cmake_force
@@ -143,7 +157,8 @@ CMakeFiles/server.dir/proto/generated/user.grpc.pb.cc.s: cmake_force
 server_OBJECTS = \
 "CMakeFiles/server.dir/src/main.cpp.o" \
 "CMakeFiles/server.dir/src/run_server.cpp.o" \
-"CMakeFiles/server.dir/src/server.cpp.o" \
+"CMakeFiles/server.dir/src/server/create_user.cpp.o" \
+"CMakeFiles/server.dir/src/server/get_user.cpp.o" \
 "CMakeFiles/server.dir/proto/generated/user.pb.cc.o" \
 "CMakeFiles/server.dir/proto/generated/user.grpc.pb.cc.o"
 
@@ -152,12 +167,13 @@ server_EXTERNAL_OBJECTS =
 
 server: CMakeFiles/server.dir/src/main.cpp.o
 server: CMakeFiles/server.dir/src/run_server.cpp.o
-server: CMakeFiles/server.dir/src/server.cpp.o
+server: CMakeFiles/server.dir/src/server/create_user.cpp.o
+server: CMakeFiles/server.dir/src/server/get_user.cpp.o
 server: CMakeFiles/server.dir/proto/generated/user.pb.cc.o
 server: CMakeFiles/server.dir/proto/generated/user.grpc.pb.cc.o
 server: CMakeFiles/server.dir/build.make
 server: CMakeFiles/server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

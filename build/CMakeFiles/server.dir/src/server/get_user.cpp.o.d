@@ -1,7 +1,7 @@
-CMakeFiles/server.dir/src/server.cpp.o: \
- /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/src/server.cpp \
+CMakeFiles/server.dir/src/server/get_user.cpp.o: \
+ /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/src/server/get_user.cpp \
  /usr/include/stdc-predef.h \
- /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/src/../inc/header.h \
+ /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/inc/../inc/header.h \
  /usr/include/c++/13/iostream /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -351,8 +351,8 @@ CMakeFiles/server.dir/src/server.cpp.o: \
  /usr/include/grpcpp/impl/server_builder_plugin.h \
  /usr/include/grpcpp/security/authorization_policy_provider.h \
  /usr/include/grpcpp/server_posix.h /usr/include/grpcpp/version_info.h \
- /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/src/../inc/../proto/generated/user.grpc.pb.h \
- /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/src/../inc/../proto/generated/user.pb.h \
+ /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/inc/../inc/../proto/generated/user.grpc.pb.h \
+ /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/inc/../inc/../proto/generated/user.pb.h \
  /usr/include/google/protobuf/port_def.inc \
  /usr/include/google/protobuf/port_undef.inc \
  /usr/include/google/protobuf/io/coded_stream.h \
@@ -432,4 +432,4 @@ CMakeFiles/server.dir/src/server.cpp.o: \
  /usr/include/grpcpp/support/proto_buffer_writer.h \
  /usr/include/grpcpp/impl/codegen/serialization_traits.h \
  /usr/include/grpcpp/support/stub_options.h \
- /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/src/../inc/../proto/generated/user.pb.h
+ /home/arham/Documents/c++_infrastruture_backend/phase_2/projects/C++_gRPC_Microservice/inc/../inc/../proto/generated/user.pb.h

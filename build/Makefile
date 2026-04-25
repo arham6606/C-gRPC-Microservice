@@ -268,29 +268,53 @@ src/run_server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/run_server.cpp.s
 .PHONY : src/run_server.cpp.s
 
-src/server.o: src/server.cpp.o
-.PHONY : src/server.o
+src/server/create_user.o: src/server/create_user.cpp.o
+.PHONY : src/server/create_user.o
 
 # target to build an object file
-src/server.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server.cpp.o
-.PHONY : src/server.cpp.o
+src/server/create_user.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server/create_user.cpp.o
+.PHONY : src/server/create_user.cpp.o
 
-src/server.i: src/server.cpp.i
-.PHONY : src/server.i
+src/server/create_user.i: src/server/create_user.cpp.i
+.PHONY : src/server/create_user.i
 
 # target to preprocess a source file
-src/server.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server.cpp.i
-.PHONY : src/server.cpp.i
+src/server/create_user.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server/create_user.cpp.i
+.PHONY : src/server/create_user.cpp.i
 
-src/server.s: src/server.cpp.s
-.PHONY : src/server.s
+src/server/create_user.s: src/server/create_user.cpp.s
+.PHONY : src/server/create_user.s
 
 # target to generate assembly for a file
-src/server.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server.cpp.s
-.PHONY : src/server.cpp.s
+src/server/create_user.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server/create_user.cpp.s
+.PHONY : src/server/create_user.cpp.s
+
+src/server/get_user.o: src/server/get_user.cpp.o
+.PHONY : src/server/get_user.o
+
+# target to build an object file
+src/server/get_user.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server/get_user.cpp.o
+.PHONY : src/server/get_user.cpp.o
+
+src/server/get_user.i: src/server/get_user.cpp.i
+.PHONY : src/server/get_user.i
+
+# target to preprocess a source file
+src/server/get_user.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server/get_user.cpp.i
+.PHONY : src/server/get_user.cpp.i
+
+src/server/get_user.s: src/server/get_user.cpp.s
+.PHONY : src/server/get_user.s
+
+# target to generate assembly for a file
+src/server/get_user.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/server.dir/build.make CMakeFiles/server.dir/src/server/get_user.cpp.s
+.PHONY : src/server/get_user.cpp.s
 
 # Help Target
 help:
@@ -317,9 +341,12 @@ help:
 	@echo "... src/run_server.o"
 	@echo "... src/run_server.i"
 	@echo "... src/run_server.s"
-	@echo "... src/server.o"
-	@echo "... src/server.i"
-	@echo "... src/server.s"
+	@echo "... src/server/create_user.o"
+	@echo "... src/server/create_user.i"
+	@echo "... src/server/create_user.s"
+	@echo "... src/server/get_user.o"
+	@echo "... src/server/get_user.i"
+	@echo "... src/server/get_user.s"
 .PHONY : help
 
 

@@ -17,6 +17,7 @@ using grpc::Service;
 using grpc::Status;
 
 using user::CreateUserRequest;
+using user::GetUserRequest;
 using user::User;
 using user::UserResponse;
 using user::UserService;
@@ -32,4 +33,6 @@ protected:
 
 public:
     Status CreateUser(ServerContext *context, const CreateUserRequest *request, UserResponse *response) override;
+
+    Status GetUser(ServerContext *context, const GetUserRequest *request, UserResponse *response) override;
 };
