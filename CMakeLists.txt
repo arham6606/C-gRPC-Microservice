@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD 17)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(GRPC REQUIRED grpc++)
 pkg_check_modules(PROTOBUF REQUIRED protobuf)
+pkg_check_modules(PQXX REQUIRED libpqxx)
 
 file(GLOB_RECURSE SRC_FILES 
     "src/*.cpp"
@@ -31,11 +32,13 @@ target_include_directories(client PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/client-testing
     ${GRPC_INCLUDE_DIRS}
     ${PROTOBUF_INCLUDE_DIRS}
+    ${PQXX_INCLUDE_DIRS}
 )
 
 target_link_libraries(client
     ${GRPC_LIBRARIES}
     ${PROTOBUF_LIBRARIES}
+    ${PQXX_LIBRARIES}
 )
 
 target_include_directories(server PRIVATE
@@ -43,9 +46,13 @@ target_include_directories(server PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/proto/generated
     ${GRPC_INCLUDE_DIRS}
     ${PROTOBUF_INCLUDE_DIRS}
+    ${PQXX_INCLUDE_DIRS}
+
 )
 
 target_link_libraries(server
     ${GRPC_LIBRARIES}
     ${PROTOBUF_LIBRARIES}
+    ${PQXX_LIBRARIES}
+
 )

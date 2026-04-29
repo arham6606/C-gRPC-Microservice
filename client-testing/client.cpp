@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    const int NUM_CLIENTS = 10000;
+    const int NUM_CLIENTS = 1000;
     vector<thread> threads;
     auto start = chrono::high_resolution_clock::now();
 
@@ -27,5 +27,6 @@ int main(void)
     send_get_request(50);
     send_get_request(300);
     send_get_request(622);
+    send_get_request(996);
 
 }

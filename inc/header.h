@@ -1,3 +1,5 @@
+#pragma once
+#include "../database/db.h"
 #include <iostream>
 #include <memory>
 #include <string>
@@ -27,11 +29,12 @@ void run();
 class UserServiceImpl final : public UserService::Service
 {
 protected:
-    unordered_map<int32_t, User> users_db;
-    int32_t id_list = 1;
     mutex db_mutex;
+    Database db;
 
 public:
+    UserServiceImpl() : db("dbname=userservice user=postgres password=1234 host=localhost") {}
+
     Status CreateUser(ServerContext *context, const CreateUserRequest *request, UserResponse *response) override;
 
     Status GetUser(ServerContext *context, const GetUserRequest *request, UserResponse *response) override;

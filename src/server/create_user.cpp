@@ -10,22 +10,26 @@ Status UserServiceImpl::CreateUser(ServerContext *context, const CreateUserReque
         return Status(grpc::INVALID_ARGUMENT, "name and email are required");
     }
 
-    for (auto &[id, user] : users_db)
+    try
     {
-
-        if (user.email() == request->email())
+        if (db.emailExists(request->email()))
         {
-            return Status(grpc::ALREADY_EXISTS, "Email already registerd");
+            return Status(grpc::ALREADY_EXISTS, "Email Already Registered");
         }
+
+        int32_t id = db.createUser(request->name(), request->email());
+
+        User users;
+        users.set_name(request->name());
+        users.set_email(request->email());
+        users.set_id(id);
+        *response->mutable_user() = users;
+
+        return Status::OK;
     }
 
-    User users;
-    users.set_name(request->name());
-    users.set_email(request->email());
-    users.set_id(id_list);
-
-    users_db[id_list] = users;
-    id_list++;
-    *response->mutable_user() = users;
-    return Status::OK;
+    catch (const exception &e)
+    {
+        return Status(grpc::INTERNAL, e.what());
+    }
 }
